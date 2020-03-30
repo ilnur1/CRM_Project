@@ -1,0 +1,51 @@
+﻿<Window x:Class="CRM_Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRM_Project"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="501.247" Width="803.254">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="460" Margin="0,10,0,0" VerticalAlignment="Top" Width="795" TabStripPlacement="Left" SelectionChanged="TabControl_SelectionChanged" BorderBrush="Cyan">
+            <TabItem x:Name="tabMyself" Header="Мои проекты" BorderBrush="#FF30FBD6" FontSize="16">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FF32DDEE" Offset="1"/>
+                        <GradientStop Color="#FFEEEFEF" Offset="0.313"/>
+                        <GradientStop Color="#FFFAFDFD"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="White"/>
+            </TabItem>
+            <TabItem x:Name="tabTeam" Header="Мои команды" BorderBrush="White" FontSize="16">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FF33D9F3" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="White"/>
+            </TabItem>
+            <TabItem Header="Мои данные" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="115" FontSize="16">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FF1AE6F0" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="White"/>
+            </TabItem>
+            <TabItem Header="Заметки" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="115" FontSize="16">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FF32DDEE" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="White"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
