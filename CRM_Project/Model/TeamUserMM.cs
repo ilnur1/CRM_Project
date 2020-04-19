@@ -4,10 +4,13 @@ using System.Runtime.CompilerServices;
 
 namespace CRM_Project.Model
 {
-    public class Note : INotifyPropertyChanged
+    /// <summary>
+    /// класс для связи многие ко многоим Team-User
+    /// </summary>
+    public class TeamUserMM : INotifyPropertyChanged
     {
         private uint id;
-        private string noteName;
+        private uint idTeam;
         private uint idUser;
 
         public uint ID
@@ -22,16 +25,44 @@ namespace CRM_Project.Model
                 OnPropertyChanged("ID");
             }
         }
-        public string NoteName
+
+        public uint IdTeam
         {
             get
             {
-                return noteName;
+                return idTeam;
             }
             set
             {
-                noteName = value;
-                OnPropertyChanged("NoteName");
+                idTeam = value;
+                OnPropertyChanged("IdTeam");
+            }
+        }
+
+        public uint IdUser
+        {
+            get
+            {
+                return idUser;
+            }
+            set
+            {
+                idUser = value;
+                OnPropertyChanged("IdUser");
+            }
+        }
+
+        [ForeignKey("idTeam")]
+        public virtual Team Team
+        {
+            get
+            {
+                return Team;
+            }
+            set
+            {
+                Team = value;
+                OnPropertyChanged("Team");
             }
         }
 

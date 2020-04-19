@@ -1,13 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace CRM_Project.Model
 {
-    public class Team : INotifyPropertyChanged
+    public class TeamProjectMM : INotifyPropertyChanged
     {
         private uint id;
-        private string name;
+        private uint idTeam;
+        private uint idProject;
 
         public uint ID
         {
@@ -22,55 +28,57 @@ namespace CRM_Project.Model
             }
         }
 
-        public string Name
+        public uint IdTeam
         {
             get
             {
-                return name;
+                return idTeam;
             }
             set
             {
-                name = value;
-                OnPropertyChanged("Name");
+                idTeam = value;
+                OnPropertyChanged("IdTeam");
             }
         }
 
-        public virtual ICollection<TeamProjectMM> TeamProjectMMs
+        public uint IdProject
         {
             get
             {
-                return TeamProjectMMs;
+                return idProject;
             }
             set
             {
-                TeamProjectMMs = value;
-                OnPropertyChanged("TeamProjectMMs");
+                idProject = value;
+                OnPropertyChanged("IdProject");
             }
         }
 
-        public virtual ICollection<TeamUserMM> TeamUserMMs
+        [ForeignKey("idTeam")]
+        public virtual Team Team
         {
             get
             {
-                return TeamUserMMs;
+                return Team;
             }
             set
             {
-                TeamUserMMs = value;
-                OnPropertyChanged("TeamUserMMs");
+                Team = value;
+                OnPropertyChanged("Team");
             }
         }
 
-        public virtual ICollection<Team> Teams
+        [ForeignKey("idProject")]
+        public virtual Project Project
         {
             get
             {
-                return Teams;
+                return Project;
             }
             set
             {
-                Teams = value;
-                OnPropertyChanged("Teams");
+                Project = value;
+                OnPropertyChanged("Project");
             }
         }
 

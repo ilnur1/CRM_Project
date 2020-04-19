@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Collections.Generic;
 
 namespace CRM_Project.Model
 {
@@ -15,7 +16,7 @@ namespace CRM_Project.Model
         {
             get
             {
-                return ID;
+                return id;
             }
             set
             {
@@ -28,7 +29,7 @@ namespace CRM_Project.Model
         {
             get
             {
-                return FirstName;
+                return firstName;
             }
             set
             {
@@ -73,6 +74,45 @@ namespace CRM_Project.Model
             {
                 password = value;
                 OnPropertyChanged("Password");
+            }
+        }
+
+        public ICollection<Note> Notes
+        {
+            get
+            {
+                return Notes;
+            }
+            set
+            {
+                Notes = value;
+                OnPropertyChanged("Notes");
+            }
+        }
+
+        public ICollection<Project> Projects
+        {
+            get
+            {
+                return Projects;
+            }
+            set
+            {
+                Projects = value;
+                OnPropertyChanged("Projects");
+            }
+        }
+
+        public ICollection<TeamUserMM> TeamUserMMs
+        {
+            get
+            {
+                return TeamUserMMs;
+            }
+            set
+            {
+                TeamUserMMs = value;
+                OnPropertyChanged("TeamUserMMs");
             }
         }
 
