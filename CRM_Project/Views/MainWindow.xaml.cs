@@ -24,5 +24,10 @@ namespace CRM_Project
         {
             InitializeComponent();
         }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
